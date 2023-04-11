@@ -19,6 +19,7 @@ from app import app as application
 EOF
 
 # Configuración de apache default. Añadimos las líneas al default.
+cp /vagrant/404.html /var/www/flask_temperaturas/404.html
 cat <<EOF >> /etc/apache2/sites-available/000-default.conf
     WSGIDaemonProcess flask_temp python-path=/var/www/flask_temperaturas:/var/www/flask_temperaturas/env/lib/python3.10/site-packages
     WSGIProcessGroup flask_temp
