@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+
+  mysql:
+    container_name: mysqlweather
+    restart: always
+    image: mysql:5.7
+    volumes:
+      - ./weatherdb:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: rootpw
+        MYSQL_DATABASE: weather
+        MYSQL_USER: weather
+        MYSQL_PASSWORD: weather
+    ports:
+        - "3306:3306"
