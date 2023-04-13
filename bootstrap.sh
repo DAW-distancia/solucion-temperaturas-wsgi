@@ -20,7 +20,6 @@ python3 -m venv env   # Crea un entorno virtual
 source env/bin/activate  # Activa el entorno virtual
 pip install -r requirements.txt
 
-cp /vagrant/inicio /var/www/Weather-App/weather_app/__init__.py
 # creación wsgi.py
 cat <<EOF > wsgi.py
 from weather_app import app as application
