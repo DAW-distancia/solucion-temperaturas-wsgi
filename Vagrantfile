@@ -67,5 +67,8 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+   # install docker and docker-compose
+  config.vm.provision :docker
+  config.vm.provision :docker_compose
   config.vm.provision :shell, path: "bootstrap.sh"
 end
