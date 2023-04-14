@@ -7,8 +7,11 @@ services:
     restart: always
     image: mysql:5.7
     volumes:
-      - ./weatherdb:/var/lib/mysql
+        - ./mysqlweather:/var/lib/mysql
     environment:
+        # Variables para el contenedor.
+        # Mejor desde un archivo .env
+        # La aplicación flask tendrá que usar estos mismos valores.
         MYSQL_ROOT_PASSWORD: rootpw
         MYSQL_DATABASE: weather
         MYSQL_USER: weather

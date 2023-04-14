@@ -48,5 +48,3 @@ chown -R www-data:www-data /var/www/Weather-App
 
 # Reinicio apache 
 systemctl restart apache2
-
-
