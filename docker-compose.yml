@@ -4,9 +4,12 @@ services:
 
   mysql:
     container_name: mysqlweather
+    # Se reinicia el contenedor al arrancar la máquina y si se para.
     restart: always
+    # Imagen de dockerhub para mysql. Documentación: https://hub.docker.com/_/mysql
     image: mysql:5.7
     volumes:
+        # Volumen local para persistencia de datos.
         - ./mysqlweather:/var/lib/mysql
     environment:
         # Variables para el contenedor.
@@ -17,4 +20,6 @@ services:
         MYSQL_USER: weather
         MYSQL_PASSWORD: weather
     ports:
+        # Puerto local:puerto contenedor
+        # Abierto para poder conectar con la aplicación flask desde el host.
         - "3306:3306"
